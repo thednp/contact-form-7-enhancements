@@ -3,8 +3,10 @@
 ** A reworked module for [quiz]
 **/
 
-/* Shortcode handler */
+/* Only affect front-end */
+if (is_admin()) return;
 
+/* Shortcode handler */
 add_action( 'wpcf7_init', 'dnp_cf7_add_shortcode_quiz' );
 
 function dnp_cf7_add_shortcode_quiz() {
