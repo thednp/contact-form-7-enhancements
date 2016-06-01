@@ -7,6 +7,6 @@ This plugin covers 2 most essential overrides for Contact Form 7 plugin:
 To enable placeholder for the quiz field, simply mention the `placeholder` shortcode setting and it will use your quiz question as placeholder. Example:
 
 ```
-[quiz random-capital-quiz class:your-class id:yourQuizName placeholder "The capital of Japan?|Tokyo" "The capital of France?|Paris"]
+[quiz capital-quiz class:your-class id:yourQuizName placeholder "The capital of Japan?|Tokyo"]
 ```
 Everything else about quiz is to be managed as described in the [documentation](http://contactform7.com/quiz/).
