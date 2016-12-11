@@ -10,7 +10,7 @@ if (is_admin()) return;
 add_action( 'wpcf7_init', 'dnp_cf7_add_shortcode_quiz' );
 
 function dnp_cf7_add_shortcode_quiz() {
-	wpcf7_add_shortcode( 'quiz', 'dnp_cf7_quiz_shortcode_handler', true );
+	wpcf7_add_form_tag( 'quiz', 'dnp_cf7_quiz_shortcode_handler', true );
 }
 
 function dnp_cf7_quiz_shortcode_handler( $tag ) {
