@@ -8,7 +8,7 @@
 add_action( 'wpcf7_init', 'dnp_cf7_add_shortcode_submit' );
 
 function dnp_cf7_add_shortcode_submit() {
-	wpcf7_add_shortcode( 'submit', 'dnp_cf7_submit_shortcode_handler' );
+	wpcf7_add_form_tag( 'submit', 'dnp_cf7_submit_shortcode_handler' );
 }
 
 function dnp_cf7_submit_shortcode_handler( $tag ) {
