@@ -19,8 +19,7 @@ add_action('admin_head','dnp_cf7e_lang');
 // replace cf7 form submit with button
 function dnp_cf7_submit() {
 	if(function_exists('wpcf7_remove_form_tag')) {
-		wpcf7_remove_form_tag('submit');
-		remove_action( 'wpcf7_init', 'wpcf7_add_tag_generator_submit', 55 );
+		remove_action( 'wpcf7_init', 'wpcf7_add_form_tag_submit' );
 		require_once 'submit.php';
 	}
 }
@@ -29,9 +28,16 @@ add_action('after_setup_theme','dnp_cf7_submit');
 // replace cf7 quiz
 function dnp_cf7_quiz() {
 	if(function_exists('wpcf7_remove_form_tag')) {
-		wpcf7_remove_form_tag('quiz');
-		remove_action( 'wpcf7_init', 'wpcf7_add_tag_generator_quiz', 55 ); 
+		remove_action( 'wpcf7_init', 'wpcf7_add_form_tag_quiz' ); 
 		require_once 'quiz.php';
 	}
 }
 add_action('after_setup_theme','dnp_cf7_quiz');
+
+// add the script
+function dnp_enque_cf7e_script() {
+	if(function_exists('wpcf7_remove_form_tag')) {
+		wp_enqueue_script( 'cf7e', plugins_url('/assets/js/cf7e.js', __FILE__), false, null, true );
+	}
+}
+add_action('wp_enqueue_scripts','dnp_enque_cf7e_script');
